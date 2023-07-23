@@ -22,7 +22,7 @@ const Home = () => {
   useEffect(() => {
     if (scrollPublicaciones) {
       const rect2 = navbarRefPubs.current.getBoundingClientRect(); 
-      const offset = -300;
+      const offset = -1000;
 
       window.scroll({
         top: rect2.top + window.scrollY + offset,

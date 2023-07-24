@@ -17,7 +17,7 @@ function Conocenos() {
   }
 
 
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(20);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -36,9 +36,9 @@ function Conocenos() {
   }, []);
 
   useEffect(() => {
-    if (isVisible && count < 4) {
+    if (isVisible && count > 4) {
       const interval = setInterval(() => {
-        setCount((prevCount) => Math.min(prevCount + 1, 100));
+        setCount((prevCount) => Math.min(prevCount - 1, 20));
       }, 100);
 
       return () => clearInterval(interval);
@@ -68,8 +68,6 @@ function Conocenos() {
           <h1>
             Fatima Mori Blanco
           </h1>
-          <img src="">
-          </img>
          </div>
           <img className={style.fotoIntegrante} src="https://media.licdn.com/dms/image/C4E03AQGPGkgO-ldRfA/profile-displayphoto-shrink_800_800/0/1649711878945?e=1695859200&v=beta&t=JhXo61qzVI4s-0WRFbHvqrpkjHtR_xSTNv_Hhimo9oY">
           </img>

@@ -7,6 +7,8 @@
     top: 0;
     height: 5vw;
     align-items: center;
+    border-bottom-left-radius: 2vw;
+    border-bottom-right-radius: 2vw;
 }
 
 .divContainer{
@@ -42,6 +44,11 @@ h1{
     color: rgba(213, 41, 10, 0.682);
 }
 
+.divContainerA img {
+    width: 20%;
+    padding: 1vw;
+    border-radius: 5vw;
+}
 
 
 
@@ -49,5 +56,9 @@ h1{
     .container {
         height: 15vw;
     }
-  }
+    .divContainerA img {
+        width: 40%;
+        padding: 1vw;
+      }
+}
   

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import NavBar from '../navbar/NavBar'
@@ -13,6 +13,7 @@ const Home = () => {
   const navbarRefArc = useRef(null);
   const navbarRefPubs = useRef(null)
   const navbarRefCon = useRef(null)
+  const [isOpen, setIsOpen] = useState(false);
 
   const scrollArchivos = useSelector(state => state.scrollArchivos);
   const scrollPublicaciones = useSelector(state => state.scrollPublicaciones);
@@ -72,9 +73,31 @@ const Home = () => {
     });
   }
 
+  useEffect(() => {
+    const isModalShown = localStorage.getItem('isModalShown');
+
+    if (!isModalShown) {
+      setIsOpen(true);
+      localStorage.setItem('isModalShown', true);
+    }
+  }, [])
+
+  const closeModal = () => {
+    setIsOpen(false);
+  };
+
   return (
     <div>
-      <NavBar/>  
+      
+      <NavBar/>
+      {isOpen && (
+        <div className={style.modalOverlay}>
+          <div className={style.modal}>
+            {/* Contenido del modal */}
+            <h1>Bienvenidos</h1>
+          </div>
+        </div>
+      )}  
       <div ref={navbarRefPubs}>
       <Publicaciones/>
       </div>

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import NavBar from '../navbar/NavBar'
 import Publicaciones from '../publicaciones/Publicaciones'
 import Archivo from '../archivos/Archivo'
-import Conocenos from '../conocenos/Conocenos'
+import Integrantes from '../integrantes/Integrante'
 import { scrollNavBarArchivos, scrollNavBarConocenos, scrollNavBarPublicaciones } from '../../actions'
 import style from './Home.module.css'
 
@@ -82,7 +82,7 @@ const Home = () => {
       <Archivo />
       </div>
       <div ref={navbarRefCon}>
-      <Conocenos/>
+      <Integrantes/>
       </div>
       <div >
         <button className={style.homeBtn} onClick={scrollToTop}></button>

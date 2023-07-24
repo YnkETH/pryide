@@ -1,0 +1,27 @@
+.container{
+    font-size: 5vw;
+    color: #dc6f6f;
+    height: 100%;
+    text-align: center;
+}
+.container h2 {
+    color: #3a35357c;
+}
+
+.fotoIntegrante{
+    width: 20%;
+    border-radius: 5vw;
+}
+.integrante{
+    width: 5%;
+}
+
+.container img:hover{
+    transition: transform 0.3s ease-in-out;
+    transform-origin: center center;
+    transform: scale(1.05);
+}
+
+.containerAlumno{
+    display: block;
+}

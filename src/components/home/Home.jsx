@@ -8,6 +8,7 @@ import Integrantes from '../integrantes/Integrante'
 import { scrollNavBarArchivos, scrollNavBarConocenos, scrollNavBarPublicaciones } from '../../actions'
 import style from './Home.module.css'
 
+
 const Home = () => {
 
   const navbarRefArc = useRef(null);

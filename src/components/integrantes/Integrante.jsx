@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import style from './Integrantes.module.css'
+import imgDeny from '../../imgs/deny.png'
+import imgFat from '../../imgs/fat.png'
 
 function Conocenos() {
+  
 
   const btnLinkedinJulio = () =>{
     window.location.href = 'https://www.linkedin.com/in/juliomaravi/'
@@ -71,7 +74,7 @@ function Conocenos() {
             Fatima Mori Blanco
           </h1>
          </div>
-          <img className={style.fotoIntegrante} src="https://media.licdn.com/dms/image/C4E03AQGPGkgO-ldRfA/profile-displayphoto-shrink_800_800/0/1649711878945?e=1695859200&v=beta&t=JhXo61qzVI4s-0WRFbHvqrpkjHtR_xSTNv_Hhimo9oY">
+          <img className={style.fotoIntegrante} src={imgFat}>
           </img>
           <div>
           <img className={style.integrante} src="https://www.freepnglogos.com/uploads/linkedin-basic-round-social-logo-png-13.png"
@@ -95,7 +98,7 @@ function Conocenos() {
           <h1>
             Deny Mendoza Guelac
           </h1>
-          <img  className={style.fotoIntegrante} src='https://media.licdn.com/dms/image/D4E03AQGmPkvuG8eJKQ/profile-displayphoto-shrink_800_800/0/1689996802690?e=1695859200&v=beta&t=aJJo-hdYWT3uWuZEl7ZT_yAJhl28cBYWR_CDuqiys8Y'>
+          <img  className={style.fotoIntegrante} src={imgDeny}>
           </img>
           <div>
             <img className={style.integrante} src="https://www.freepnglogos.com/uploads/linkedin-basic-round-social-logo-png-13.png"

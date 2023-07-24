@@ -82,22 +82,70 @@ const Home = () => {
     }
   }, [])
 
-  const closeModal = () => {
-    setIsOpen(false);
-  };
+    //////////////////////     
+    const [texto, setTexto] = useState('B'); 
+    const [showExclamation, setShowExclamation] = useState(true);
+    const textoOriginal = "Bienvenido";
+    
+    
+  // Función para animar el texto como si se estuviera escribiendo
+  useEffect(() => {
+    let currentIndex = 0;
+    const interval = setInterval(() => {
+      if (currentIndex < textoOriginal.length-1) {
+        setTexto((prevTexto) => prevTexto + textoOriginal[currentIndex]);
+        currentIndex++;
+      } else {
+        clearInterval(interval);
+        // Mostrar "!." intermitentemente por 3 segundos
+        setTimeout(() => {
+          setShowExclamation(false);
+        }, 500); // Ocultar "!." después de 1 segundo
+        setTimeout(() => {
+          setShowExclamation(true);
+        }, 1200); // Mostrar "!." después de 2 segundo
+        setTimeout(() => {
+          setShowExclamation(false);
+        }, 1700); // Mostrar "!." después de 2 segundos
+        setTimeout(() => {
+          setShowExclamation(true);
+        }, 2200); // Mostrar "!." después de 2 segundos
+        setTimeout(() => {
+          setShowExclamation(false);
+        }, 2700); // Mostrar "!." después de 2 segundos
+        setTimeout(() => {
+          setShowExclamation(true);
+        }, 3200); // Mostrar "!." después de 2 segundos
+      }
+    }, 200); // Ajusta la velocidad de escritura aquí (en milisegundos)
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+
+    useEffect(() => {
+      const timer = setTimeout(() => {
+        setIsOpen(false);
+      }, 5000);
+  
+      return () => {
+        clearTimeout(timer);
+      };
+    }, []);
+ 
+    ///////////
 
   return (
     <div>
-      
-      <NavBar/>
       {isOpen && (
         <div className={style.modalOverlay}>
           <div className={style.modal}>
-            {/* Contenido del modal */}
-            <h1>Bienvenidos</h1>
+            <h1>{texto}{showExclamation && texto.length==10? "!":''}</h1>
           </div>
         </div>
       )}  
+      <NavBar/>      
       <div ref={navbarRefPubs}>
       <Publicaciones/>
       </div>
@@ -105,9 +153,9 @@ const Home = () => {
       <Archivo />
       </div>
       <div ref={navbarRefCon}>
-      <Integrantes/>
-      </div>
-      <div >
+      <Integrantes/> 
+      </div>     
+      <div>
         <button className={style.homeBtn} onClick={scrollToTop}></button>
       </div>
   </div>

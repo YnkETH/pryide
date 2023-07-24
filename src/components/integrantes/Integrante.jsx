@@ -22,7 +22,7 @@ function Conocenos() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const div = document.getElementById('imgContador'); // Reemplaza 'miDiv' con el ID de tu div objetivo
+      const div = document.getElementById('imgContador');
       const rect = div.getBoundingClientRect();
       const isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
       setIsVisible(isVisible);
@@ -44,6 +44,8 @@ function Conocenos() {
       return () => clearInterval(interval);
     }
   }, [isVisible, count]);
+
+
 
 
   return (
@@ -99,8 +101,6 @@ function Conocenos() {
             <img className={style.integrante} src="https://www.freepnglogos.com/uploads/linkedin-basic-round-social-logo-png-13.png"
             onClick={btnLinkedinDeny}>
             </img> 
-
-
           </div>
          </div>
        </div>

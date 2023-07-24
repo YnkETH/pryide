@@ -1,7 +1,7 @@
 .container{
     display: flex;
     justify-content: space-around;
-    background-color: rgb(132, 193, 243); 
+    background: linear-gradient(to bottom, #0078c4, #00aae3);
     position: fixed;
     width: 100%;
     top: 0;
@@ -12,8 +12,6 @@
 .divContainer{
     padding: 0.1vw;
     color: #f1f1f1;
-    /* border: 2px solid black;
-    border-radius: 15px; */
     width: 20%;
     display: flex;
     justify-content: center;
@@ -26,14 +24,12 @@ h1{
 
 .divContainer:hover{
     color: rgb(237, 237, 93);
-    /* background-color: rgba(128, 55, 0, 0.2) */
+
 }
 
 .divContainerA{
     padding: 0.2vw;
     color: #f1f1f1;
-    /* border: 2px solid black;
-    border-radius: 15px; */
     width: 20%;
     display: flex;
     justify-content: center;
@@ -44,6 +40,5 @@ h1{
 .divContainerA:hover{
     text-decoration: none;
     color: rgba(213, 41, 10, 0.682);
-    /* background-color: rgba(128, 19, 0, 0.2) */
 }
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import NavBar from '../navbar/NavBar'
@@ -6,6 +6,7 @@ import Publicaciones from '../publicaciones/Publicaciones'
 import Archivo from '../archivos/Archivo'
 import Conocenos from '../conocenos/Conocenos'
 import { scrollNavBarArchivos, scrollNavBarConocenos, scrollNavBarPublicaciones } from '../../actions'
+import style from './Home.module.css'
 
 const Home = () => {
 
@@ -63,6 +64,14 @@ const Home = () => {
     }
   }, [scrollConocenos, dispatch]);
 
+  function scrollToTop() {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+  }
+
   return (
     <div>
       <NavBar/>  
@@ -74,6 +83,9 @@ const Home = () => {
       </div>
       <div ref={navbarRefCon}>
       <Conocenos/>
+      </div>
+      <div >
+        <button className={style.homeBtn} onClick={scrollToTop}></button>
       </div>
   </div>
   )

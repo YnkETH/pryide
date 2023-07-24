@@ -1,0 +1,17 @@
+.homeBtn{
+    position: fixed;
+    bottom: 2vw; /* Distancia desde la parte inferior */
+    right: 2vw; /* Distancia desde la parte derecha */
+    padding: 3vw;
+    background-image: url('../../../imgs/Button-PNG-HD-Image.png');
+    background-size: cover;
+    background-color: rgba(235, 225, 225, 0.019);
+    border: none;
+    border-radius: 3vw;
+    cursor: pointer;
+}
+
+.homeBtn:focus {
+    outline: none;
+  }
+  

@@ -42,3 +42,12 @@ h1{
     color: rgba(213, 41, 10, 0.682);
 }
 
+
+
+
+@media (max-width: 912px) {
+    .container {
+        height: 15vw;
+    }
+  }
+  

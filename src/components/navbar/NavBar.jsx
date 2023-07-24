@@ -1,6 +1,6 @@
-import React, { useRef } from 'react'
-import { useNavigate } from "react-router-dom";
-import { useSelector, useDispatch } from 'react-redux';
+import React from 'react'
+
+import {  useDispatch } from 'react-redux';
 
 import style from "./NavBar.module.css"
 import { scrollNavBarArchivos, scrollNavBarPublicaciones,scrollNavBarConocenos } from '../../actions'

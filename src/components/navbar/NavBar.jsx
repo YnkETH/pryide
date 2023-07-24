@@ -24,7 +24,7 @@ const NavBar = () => {
   return (
     <div id='navContainer' className={style.container}>
       <div className={style.divContainer} onClick={btnPublicaciones} >
-      <h1>Publicaciones</h1> 
+      <h1>Publicacionesss</h1> 
       </div>
       <div className={style.divContainer} onClick={btnArchivos}>
       <h1>Archivos</h1>  {/*(IMAGENES)*/} 

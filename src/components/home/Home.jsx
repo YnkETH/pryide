@@ -38,7 +38,7 @@ const Home = () => {
     if (scrollArchivos) {
       const rect = navbarRefArc.current.getBoundingClientRect();
       const navbarRef = document.getElementById('navContainer'); 
-      const offset = -navbarRef.clientHeight;
+      const offset = -navbarRef.clientHeight+8;
 
       window.scroll({
         top: rect.top + window.scrollY + offset,
@@ -53,7 +53,7 @@ const Home = () => {
     if (scrollConocenos) {
       const rect3 = navbarRefCon.current.getBoundingClientRect();
       const navbarRef = document.getElementById('navContainer'); 
-      const offset = -navbarRef.clientHeight;
+      const offset = -navbarRef.clientHeight+5;
 
       window.scroll({
         top: rect3.top + window.scrollY + offset,

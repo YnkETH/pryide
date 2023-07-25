@@ -17,6 +17,8 @@ const ModalIntegrantes = ({ isOpen, onClose }) => {
   return (
     <div className="modal-overlay">
       <div className="modal-content">
+        
+        <div className='div-contenido'>
         <h2>¡Escribe tu correo!</h2>
         <input
         type="email"
@@ -26,8 +28,12 @@ const ModalIntegrantes = ({ isOpen, onClose }) => {
         onChange={handleChange}
         placeholder="Ingresa tu correo electrónico"
         required
+        className="input"
       />
+      <div>
         <button onClick={onClose} className="btnModal" type='email'>Listo</button>
+        </div>
+        </div>
       </div>
     </div>
   );

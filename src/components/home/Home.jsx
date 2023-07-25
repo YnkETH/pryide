@@ -7,6 +7,7 @@ import Archivo from '../archivos/Archivo'
 import Integrantes from '../integrantes/Integrante'
 import { scrollNavBarArchivos, scrollNavBarConocenos, scrollNavBarPublicaciones } from '../../actions'
 import style from './Home.module.css'
+import ModalIntegrantes from '../integrantes/ModalIntegrantes'
 
 
 const Home = () => {
@@ -15,6 +16,8 @@ const Home = () => {
   const navbarRefPubs = useRef(null)
   const navbarRefCon = useRef(null)
   const [isOpen, setIsOpen] = useState(false);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const scrollArchivos = useSelector(state => state.scrollArchivos);
   const scrollPublicaciones = useSelector(state => state.scrollPublicaciones);
@@ -83,13 +86,11 @@ const Home = () => {
     }
   }, [])
 
-    //////////////////////     
+   
     const [texto, setTexto] = useState('B'); 
     const [showExclamation, setShowExclamation] = useState(true);
     const textoOriginal = "Bienvenido";
-    
-    
-  // Función para animar el texto como si se estuviera escribiendo
+  
   useEffect(() => {
     let currentIndex = 0;
     const interval = setInterval(() => {
@@ -98,27 +99,26 @@ const Home = () => {
         currentIndex++;
       } else {
         clearInterval(interval);
-        // Mostrar "!." intermitentemente por 3 segundos
+        
         setTimeout(() => {
           setShowExclamation(false);
-        }, 500); // Ocultar "!." después de 1 segundo
+        }, 500); 
         setTimeout(() => {
           setShowExclamation(true);
-        }, 1200); // Mostrar "!." después de 2 segundo
+        }, 1200); 
         setTimeout(() => {
           setShowExclamation(false);
-        }, 1700); // Mostrar "!." después de 2 segundos
+        }, 1700); 
         setTimeout(() => {
           setShowExclamation(true);
-        }, 2200); // Mostrar "!." después de 2 segundos
+        }, 2200); 
         setTimeout(() => {
           setShowExclamation(false);
-        }, 2700); // Mostrar "!." después de 2 segundos
+        }, 2700); 
         setTimeout(() => {
           setShowExclamation(true);
-        }, 3200); // Mostrar "!." después de 2 segundos
-      }
-    }, 200); // Ajusta la velocidad de escritura aquí (en milisegundos)
+        }, 3200);       }
+    }, 200); 
 
     return () => {
       clearInterval(interval);
@@ -135,14 +135,22 @@ const Home = () => {
       };
     }, []);
  
-    ///////////
+    
+    const openModal = () => {
+      setIsModalOpen(true);
+    };
+  
+    const closeModal = () => {
+      setIsModalOpen(false);
+    };
+  
 
   return (
     <div>
       {isOpen && (
         <div className={style.modalOverlay}>
           <div className={style.modal}>
-            <h1>{texto}{showExclamation && texto.length==10? "!":''}</h1>
+            <h1>{texto}{showExclamation && texto.length===10? "!":''}</h1>
           </div>
         </div>
       )}  
@@ -155,6 +163,13 @@ const Home = () => {
       </div>
       <div ref={navbarRefCon}>
       <Integrantes/> 
+      <div className={style.Participante}>
+      <div className={style.titulo}>
+      <h2>¿Te gustaría ser parte de nosotros?</h2>
+      </div>
+      <button onClick={openModal} className={style.participanteButton}>Quiero ayudar!</button>
+      <ModalIntegrantes isOpen={isModalOpen} onClose={closeModal}/>
+    </div>
       </div>     
       <div>
         <button className={style.homeBtn} onClick={scrollToTop}></button>

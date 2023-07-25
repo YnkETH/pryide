@@ -1,7 +1,7 @@
 .homeBtn{
     position: fixed;
-    bottom: 2vw; /* Distancia desde la parte inferior */
-    right: 2vw; /* Distancia desde la parte derecha */
+    bottom: 2vw; 
+    right: 2vw; 
     padding: 3vw;
     background-image: url('../../imgs/Button-PNG-HD-Image.png');
     background-size: cover;
@@ -16,10 +16,16 @@
     outline: none;
 }
 
+
 .homeBtn:hover{
     transition: transform 0.3s ease-in-out;
     transform-origin: center center;
     transform: scale(1.2);
+}
+
+.titulo {
+  color: #3a35357c;
+  font-size: 2vw;
 }
   
 .modalOverlay {
@@ -28,7 +34,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(195, 162, 162, 0.5); /* Fondo semitransparente */
+    background-color: rgba(195, 162, 162, 0.5); 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,4 +45,38 @@
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(203, 186, 186, 0.2);
+  }
+  .Participante{
+    height: 13vw;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;      
+  }
+
+  .participanteButton{
+    width: 35vw; 
+    border-radius: 15vw;
+    font-size: 3em;
+    cursor: pointer;
+    background: linear-gradient(to bottom, #0078c4, #00aae3);
+    color: #f1f1f1;
+    border-style: none;
+  }
+    .homeBtn:focus {
+      outline: none;
+  }
+  
+  .participanteButton:hover{
+      transition: transform 0.3s ease-in-out;
+      transform-origin: center center;
+      transform: scale(1.2);
+  }
+
+  @media (min-width: 912px) {
+    .participanteButton{
+        width: 15vw;
+        height: 5vw; 
+        font-size: 2vw;
+    }
   }
